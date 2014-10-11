@@ -1,8 +1,18 @@
+"""
+EECS 149/249 Project demo
+Email Notifier - Server
+
+@author: Antonio Iannopollo
+"""
+
 import urllib2
 import xml.etree.ElementTree as ET
+import time
 
-LABEL = '%5Beecs-149-249%5D'
-FILENAME = '149count.txt'
+GMAIL_USER = 'username'
+GMAIL_PASSWORD = 'password'
+LABEL = 'label'
+FILEPATH = '/path/to/file'
 
 def get_unread_msgs(user, passwd, label = ""):
     auth_handler = urllib2.HTTPBasicAuthHandler()
@@ -27,9 +37,18 @@ def NotValidXMLError(Exception):
     pass
 
 
-xml_text = get_unread_msgs('name', 'password', LABEL)
+if __name__ == '__main__':
 
-print xml_text
-count = count_unread_emails(xml_text)
+    print 'EECS 149/249 email notifier - server'
 
-print count
+    while True:
+        xml_text = get_unread_msgs(GMAIL_USER, GMAIL_PASSWORD, LABEL)
+
+        count = count_unread_emails(xml_text)
+
+        file = open(FILEPATH, 'w')
+        file.write(count)
+        file.close()
+
+        time.sleep(5)
+
