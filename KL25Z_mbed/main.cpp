@@ -18,7 +18,7 @@
  *  \brief EECS149 demo
  *  \author Antonio Iannopollo
  *
- * This demo illustrate how to connect the mbed KL25Z platform to internet 
+ * This demo illustrates how to connect the mbed KL25Z platform to internet 
  * thorugh the CC3000 wifi breakout board (http://www.adafruit.com/product/1469).
  * Connections between the KL25Z and the CC3000 are made according to the 
  * guide (https://learn.adafruit.com/adafruit-cc3000-wifi) -- KL25Z and arduino
